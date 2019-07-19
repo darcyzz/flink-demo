@@ -1,0 +1,22 @@
+description = 'Realtime Calc which use Flink Stack.'
+
+archivesBaseName = 'fd-online'
+
+dependencies {
+    compile project(':fd-biz')
+
+    compile project(':fd-mod')
+}
+
+jar {
+    zip64 true
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    manifest {
+        attributes(
+                "Manifest-Version": 1.0,
+                "Main-Class": "com.darcy.fd.FdOnline")
+    }
+}

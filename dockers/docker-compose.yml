@@ -1,0 +1,26 @@
+version: '3'
+services:
+    influxdb:
+        image: influxdb:1.7
+        environment:
+            - INFLUXDB_DB=fddb
+            - INFLUXDB_ADMIN_USER=admin
+            - INFLUXDB_ADMIN_PASSWORD=JPBCxndR
+            - INFLUXDB_HTTP_AUTH_ENABLED=true
+        volumes:
+            - /home/darcy/deploy/influxdb/data:/var/lib/influxdb
+            - /home/darcy/deploy/influxdb/log:/var/log/influxdb
+        ports:
+            - "8083:8083"
+            - "8086:8086"
+
+    grafana:
+        image: grafana/grafana:5.3.2
+        environment:
+            GF_SECURITY_ADMIN_PASSWORD: JPBCxndR
+        volumes:
+            - /home/darcy/deploy/grafana/data:/var/lib/grafana
+            - /home/darcy/deploy/grafana/data/plugins:/var/lib/grafana/plugins
+            - /home/darcy/deploy/grafana/logs:/var/log/grafana
+        ports:
+            - "10104:3000"

@@ -1,0 +1,7 @@
+description = 'Flink-demo which use Flink.'
+
+archivesBaseName = 'fd-mod'
+
+dependencies {
+    compile project(':fd-biz')
+}
