@@ -3,9 +3,9 @@ description = 'Realtime Calc which use Flink Stack.'
 archivesBaseName = 'fd-online'
 
 dependencies {
-    compile project(':fd-biz')
+    implementation project(':fd-biz')
 
-    compile project(':fd-mod')
+    implementation project(':fd-mod')
 }
 
 jar {

@@ -9,4 +9,4 @@ Introduction
 * Flink(1.7.2-scala_2.11)
 * Docker-Compose(3.0)
 * InfluxDB(1.7.0)
-* Gradle(2.1.1)
+* Gradle(5.5)

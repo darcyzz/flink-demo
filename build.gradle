@@ -22,7 +22,7 @@ subprojects {
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
     repositories {
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
     }
 
     jar {
@@ -59,7 +59,8 @@ subprojects {
     }
 
     // 显示当前项目下所有用于 compile 的 jar.
-    task listJars(description: 'Display all compile jars.') << {
+    task listJars(description: 'Display all compile jars.') {
         configurations.compile.each { File file -> println file.name }
     }
+
 }
